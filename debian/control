@@ -1,0 +1,24 @@
+Source: libxml2
+Section: libs
+Priority: extra
+Maintainer: Balazs Scheidler <bazsi@balabit.hu>
+Build-depends: debhelper (>=4)
+Standards-Version: 3.6.2
+
+Package: libxml2
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends}
+Description: libxml2
+
+Package: libxml2-dbg
+Architecture: any
+Section: libdevel
+Depends: libxml2 (= ${Source-Version})
+Description: libxml2-dbg
+
+Package: libxml2-dev
+Architecture: any
+Section: libdevel
+Depends: libxml2
+Description: libxml2-dev

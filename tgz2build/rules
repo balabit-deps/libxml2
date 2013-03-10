@@ -1,0 +1,50 @@
+#!/usr/bin/make -f
+
+STAMPDIR=tgz2build/stamps
+
+CONFIGURE_OPTS := --prefix $(ZBS_PREFIX) --enable-shared --without-python
+
+LDFLAGS+=-L$(PWD)/lib -L$(PWD)/lib/.libs
+ifeq (,$(CC))
+CC=gcc
+endif
+
+ifneq (,$(findstring tru64,$(ZBS_DIST)))
+# need to use the gcc version 4.0.2 because the gcc-4.2 generated wrong binary which did not started thread correctly
+CC=gcc
+CPP=cpp
+endif
+
+ifneq (,$(findstring solaris,$(ZBS_DIST)))
+	ifneq (,$(findstring amd64,$(ZBS_ARCH)))
+		CONFIGURE_OPTS +=
+	endif
+endif
+
+all: binary
+
+binary: setup configure build install
+
+setup: $(STAMPDIR)/stamp-setup
+$(STAMPDIR)/stamp-setup:
+	mkdir tgz2build/stamps || true
+	touch $@
+
+configure: $(STAMPDIR)/stamp-configure
+$(STAMPDIR)/stamp-configure:
+	LDFLAGS="$(LDFLAGS) -g" CFLAGS="$(CFLAGS) -g -O2" CONFIG_SHELL=$(SHELL) $(SHELL) ./configure $(CONFIGURE_OPTS)
+	touch $@
+
+build: $(STAMPDIR)/stamp-build
+$(STAMPDIR)/stamp-build:
+	$(MAKE)
+	touch $@
+
+install:
+	rm -rf $(ZBS_STAGE_DIR)
+	$(MAKE) install DESTDIR=$(ZBS_STAGE_DIR)
+
+clean:
+	rm -rf tgz2build/stamps || true
+	rm -rf tgz2build/staging || true
+	$(MAKE) clean

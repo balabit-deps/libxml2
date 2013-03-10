@@ -1,0 +1,9 @@
+libxml2 (2.9.0) syslogng50dbg; urgency=low
+
+  * New upstream version.
+
+ -- BalaBit Development Team <devel@balabit.hu>  Sat, 10 Mar 2013 9:45:30 +0200
+
+Local variables:
+mode: debian-changelog
+End:

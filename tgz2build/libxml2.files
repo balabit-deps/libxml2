@@ -1,0 +1,3 @@
+opt/syslog-ng/lib/libxml2.s[l,o]*
+opt/syslog-ng/lib/*.dylib
+opt/syslog-ng/lib/libxml2.a
