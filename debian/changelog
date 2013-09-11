@@ -1,3 +1,9 @@
+libxml2 (2.9.0) syslogngdeps50; urgency=low
+
+  * release for syslog-ng-5.0
+
+ -- BalaBit Development Team <devel@balabit.hu> Wed, 11 Sep 2013 14:36:23 +0200
+
 libxml2 (2.9.0) syslogng50dbg; urgency=low
 
   * New upstream version.
