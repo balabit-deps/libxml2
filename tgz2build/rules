@@ -2,7 +2,7 @@
 
 STAMPDIR=tgz2build/stamps
 
-CONFIGURE_OPTS := --prefix $(ZBS_PREFIX) --enable-shared --without-python
+CONFIGURE_OPTS := --prefix $(ZBS_PREFIX) --enable-shared --without-python --enable-ipv6=no
 
 LDFLAGS+=-L$(PWD)/lib -L$(PWD)/lib/.libs
 ifeq (,$(CC))
