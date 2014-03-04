@@ -1,3 +1,9 @@
+libxml2 (2.9.0.syslog-ng51.1) syslogngdeps51; urgency=low
+
+  * release for syslog-ng-5.1
+
+ -- Laszlo Budai <lbudai@balabit.com> Tue, 04 Mar 2014 10:47:51 +0100
+
 libxml2 (2.9.0.syslog-ng50.1) syslogngdeps50; urgency=low
 
   * disabled ipv6 support
