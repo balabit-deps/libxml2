@@ -1,3 +1,9 @@
+libxml2 (2.9.0.syslog-ng52.1) syslogng52; urgency=low
+
+  * release for syslog-ng-5.2
+
+ -- jviktor <jviktor@devel-57>  Tue, 10 Jun 2014 14:35:57 +0200
+
 libxml2 (2.9.0.syslog-ng51.1) syslogngdeps51; urgency=low
 
   * release for syslog-ng-5.1
