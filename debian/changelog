@@ -1,3 +1,9 @@
+libxml2 (2.9.0.syslogng53.1) syslogng53; urgency=low
+
+  * release for syslog-ng-5.3
+
+ -- Tusa Viktor <tusa@tusa.balabit>  Tue, 21 Oct 2014 13:49:59 +0200
+
 libxml2 (2.9.0.syslog-ng52.1) syslogng52; urgency=low
 
   * release for syslog-ng-5.2
