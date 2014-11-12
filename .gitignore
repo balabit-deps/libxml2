@@ -111,7 +111,7 @@ xmllint
 xstc/Makefile
 xstc/Makefile.in
 xstc/Tests
-smake/*.pyc
-smake.pyc
-b
+sbuild/*.pyc
+sbuild/build
+sbuild.py*
 compile
