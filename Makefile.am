@@ -4,7 +4,14 @@ ACLOCAL_AMFLAGS = -I m4
 
 SUBDIRS = include . doc example xstc $(PYTHON_SUBDIR)
 
-DIST_SUBDIRS = include . doc example python xstc
+DIST_SUBDIRS = include . doc example xstc
+
+EXTRA_DIST=debian tgz2build winbuild
+if WITH_PYTHON
+DIST_SUBDIRS+= python
+else
+EXTRA_DIST+= python
+endif
 
 AM_CPPFLAGS = -I$(top_builddir)/include -I$(srcdir)/include
 
@@ -1201,7 +1208,7 @@ DISTCLEANFILES = COPYING missing.lst
 confexecdir=$(libdir)
 confexec_DATA = xml2Conf.sh
 CVS_EXTRA_DIST=
-EXTRA_DIST = xml2-config.in xml2Conf.sh.in libxml.spec.in libxml2.spec \
+EXTRA_DIST += xml2-config.in xml2Conf.sh.in libxml.spec.in libxml2.spec \
              libxml.m4 Copyright check-xml-test-suite.py gentest.py \
 	     check-relaxng-test-suite.py check-relaxng-test-suite2.py \
 	     check-xsddata-test-suite.py check-xinclude-test-suite.py \
