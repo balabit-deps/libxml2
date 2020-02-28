@@ -1,3 +1,9 @@
+libxml2 (2.9.0.syslogng53.3) syslogng53; urgency=low
+
+  * release for syslog-ng-5.3.0alpha2
+
+ -- kokan <peter.kokai@oneidentity.com>  Fri, 28 Deb 2020 16:36:37 +0100
+
 libxml2 (2.9.0.syslogng53.2) syslogng53; urgency=low
 
   * release for syslog-ng-5.3.0alpha2
