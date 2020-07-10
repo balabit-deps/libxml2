@@ -2,6 +2,7 @@ name: libxml2
 builder:
   name: AutotoolsBuilder
   configure_options: --without-python --with-zlib=\${prefix}
+  flags: "relative-linking"
 platforms:
   - aix-6.1/powerpc
   - hpux-11v2/ia64
