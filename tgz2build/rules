@@ -4,7 +4,7 @@ STAMPDIR=tgz2build/stamps
 
 CONFIGURE_OPTS := --prefix $(ZBS_PREFIX) --enable-shared --without-python --enable-ipv6=no
 
-LDFLAGS+=-L$(PWD)/lib -L$(PWD)/lib/.libs
+LDFLAGS+=-Wl,-z,origin,-rpath,\$$$$ORIGIN/../lib -L$(PWD)/lib -L$(PWD)/lib/.libs
 ifeq (,$(CC))
 CC=gcc
 endif
@@ -32,7 +32,7 @@ $(STAMPDIR)/stamp-setup:
 
 configure: $(STAMPDIR)/stamp-configure
 $(STAMPDIR)/stamp-configure:
-	LDFLAGS="$(LDFLAGS) -g" CFLAGS="$(CFLAGS) -g -O2" CONFIG_SHELL=$(SHELL) $(SHELL) ./configure $(CONFIGURE_OPTS)
+	LDFLAGS='$(LDFLAGS) -g' CFLAGS="$(CFLAGS) -g -O2" CONFIG_SHELL=$(SHELL) $(SHELL) ./configure $(CONFIGURE_OPTS)
 	touch $@
 
 build: $(STAMPDIR)/stamp-build
