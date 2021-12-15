@@ -1,0 +1,5 @@
+opt/syslog-ng/include/libxml2/*
+opt/syslog-ng/lib/*.dylib
+opt/syslog-ng/lib/pkgconfig/libxml-2.0.pc
+opt/syslog-ng/lib/libxml2.a
+opt/syslog-ng/lib/libxml2.la

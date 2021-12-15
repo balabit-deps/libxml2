@@ -1,0 +1,8 @@
+name: libxml2
+builder:
+  name: AutotoolsBuilder
+  configure_options: --without-python --with-zlib=\${prefix}
+  flags: "relative-linking"
+  environments:
+    NOCONFIGURE: "1"
+
